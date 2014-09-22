@@ -38,3 +38,7 @@ r `~/.bash_profile`:
 curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/git-aliases.plugin.zsh >>
 ~/.bash_profile
 ```
+
+## If you like this, you might also like...
+* [Send.zsh](https://github.com/robertzk/send.zsh), a git command by robertzk that combines `git add .`, `git commit -a -m`, and `git push origin <branch>`.
+* [Send.vim](https://github.com/peterhurford/send.vim), a vim plugin by me to do the above _without leaving vim_.
