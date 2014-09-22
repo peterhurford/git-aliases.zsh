@@ -28,7 +28,7 @@ fp() {
 }
 cofp() {
   co "$1"
-  full_pull
+  fp
 }
 backmerge() {
   curr_branch=`git rev-parse --abbrev-ref HEAD`
