@@ -6,7 +6,7 @@ Shorten various frequently used git aliases:
 * `git reset --hard` is shortened to `reset`.
 * Git checkout is shortened to `co`.
 * Making a branch is shortened to `cob <new branch name>`.
-* `clone <git username> <repo name>` shortens `git clone` by not requiring the URL.
+* `clone <git username> <repo name>` shortens `git clone` by not requiring the URL (though you can `clone <URL>` if you want to).
 
 Create new omnibus commands by merging things together:
 

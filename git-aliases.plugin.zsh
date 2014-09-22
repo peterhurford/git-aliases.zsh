@@ -47,6 +47,10 @@ prune() {
   git push origin --delete "$1"
 }
 clone() {
-  git clone git@github.com:$1/$2.git
-  cd $2
+  if [[ -z $2 ]]; then
+    git clone $1
+  else
+    git clone git@github.com:$1/$2.git
+    cd $2
+  fi
 }
