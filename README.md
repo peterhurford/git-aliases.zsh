@@ -31,6 +31,8 @@ echo "plugins+=(git-aliases)" >> ~/.zshrc
 
 (Alternatively, you can place the `git-aliases` plugin in the `plugins=(...)` local in your `~/.zshrc` manually.)
 
+(Once you have this plugin, you can clone this plugin via `clone peterhurford git-aliases.zsh` instead.  Much better!)
+
 If you use the non-recommended alternative, bash, you can install this directly to you
 r `~/.bash_profile`:
 
@@ -42,3 +44,6 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 ## If you like this, you might also like...
 * [Send.zsh](https://github.com/robertzk/send.zsh), a git command by robertzk that combines `git add .`, `git commit -a -m`, and `git push origin <branch>`.
 * [Send.vim](https://github.com/peterhurford/send.vim), a vim plugin by me to do the above _without leaving vim_.
+
+## Help, I don't like your alias names!
+Then feel free to reverse-engineer the plugin! ;)
