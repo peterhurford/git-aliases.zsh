@@ -32,7 +32,7 @@ cofp() {
 }
 backmerge() {
   curr_branch=`git rev-parse --abbrev-ref HEAD`
-  copf master
+  cofp master
   reset
   git checkout $curr_branch
   git merge origin/master -m 'Backmerged master'
