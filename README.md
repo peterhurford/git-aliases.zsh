@@ -44,6 +44,7 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 ## If you like this, you might also like...
 * [Send.zsh](https://github.com/robertzk/send.zsh), a git command by robertzk that combines `git add .`, `git commit -a -m`, and `git push origin <branch>`.
 * [Send.vim](https://github.com/peterhurford/send.vim), a vim plugin by me to do the above _without leaving vim_.
+* [Git-it-on.zsh](https://github.com/peterhurford/git-it-on.zsh), git commands to open files on GitHub from the command line.
 
 ## Help, I don't like your alias names!
 Then feel free to reverse-engineer the plugin! ;)
