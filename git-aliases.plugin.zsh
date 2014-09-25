@@ -9,6 +9,8 @@ pull() { pull_or_push "pull" $@ }
 push() { pull_or_push "push" $@ }
 
 alias s='git status'
+alias gf='git fetch'
+alias gb='git branch'
 alias reset='git reset --hard'
 alias cob='git checkout -b '
 checkout() {
