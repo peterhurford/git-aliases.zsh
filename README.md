@@ -21,6 +21,8 @@ Create new omnibus commands by merging things together:
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
+No changes are made to anything involving `git checkout`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/peterhurford/send.vim).
+
 
 ## Installation
 
@@ -45,10 +47,24 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 ```
 
 ## Why use this instead of the "git" plugin?
-[Oh-my-zsh]() already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
+[Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
 
-## Help, I don't like your alias names!
-Then feel free to reverse-engineer the plugin! ;)
+I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working with Ruby easier (with built in `bundle` and `migrate`), but if you don't work with Ruby and don't like some of the style choices I made (such as `git status` upon checkout), you might prefer that plugin instead.
+
+
+## Why can't I use them both?
+Pick a side, we're at war!
+
+But in seriousness, I think if you use them both (include both in your plugin line), nothing crashes and they don't interfere much with each other.  You'll be able to use the custom commands both here and there (i.e., both `gco` and `co` will work to do `git checkout`) and nothing in either plugin overwrites functionality of the other plugin.
+
+
+## Help! Tab completion isn't working for branch names like you said!
+To fix this bug, if you have either `autoload -U compinit && compinit` or `setopt completealiases` in your `.zshrc`, remove them.
+
+If that doesn't work, you may have to include `unsetopt completealiases`, because it is being set somewhere else.  Though doing this may break the functionality of a different plugin.
+
+If the problem still persists, it's a problem I haven't encountered myself yet.  Good luck.
+
 
 ## If you like this, you might also like...
 * [Send.zsh](https://github.com/robertzk/send.zsh), a git command by robertzk that combines `git add .`, `git commit -a -m`, and `git push origin <branch>`.
