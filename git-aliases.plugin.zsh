@@ -12,17 +12,18 @@ alias s='git status'
 alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
-alias cob='git checkout -b '
-checkout() {
+co() {
   git checkout "$1"
   git status
 }
-alias co='checkout'
+compdef _git co=git-checkout
+alias cob='git checkout -b '
 cop() {
   git checkout "$1"
   pull
   git status
 }
+compdef _git cop=git-checkout
 fp() {
   pull
   bundle install
@@ -32,11 +33,12 @@ cofp() {
   co "$1"
   fp
 }
+compdef _git cofp=git-checkout
 backmerge() {
   curr_branch=`git rev-parse --abbrev-ref HEAD`
   cofp master
   reset
-  git checkout $curr_branch
+  co $curr_branch
   git merge origin/master -m 'Backmerged master'
   echo 'Backmerge completed.  You may have to restart your local server.'
 }

@@ -5,7 +5,7 @@ Shorten various frequently used git aliases:
 * `s` does `git status`
 * `reset` does `git reset --hard`
 * `reset <commit>` does `git reset --hard <commit>`
-* `co <branch>` does `git checkout <branch>`
+* `co <branch>` does `git checkout <branch>`.  You can tab autocomplete these branches.
 * `cob <branch>` does `git checkout -b <branch>` (make a branch)
 * `gf` does `git fetch`
 * `gb` does `git branch` (see your branches)
@@ -21,8 +21,8 @@ Create new omnibus commands by merging things together:
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
-## Installation
 
+## Installation
 
 Assuming you have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), you can
 simply write:
@@ -44,10 +44,13 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 ~/.bash_profile
 ```
 
+## Why use this instead of the "git" plugin?
+[Oh-my-zsh]() already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
+
+## Help, I don't like your alias names!
+Then feel free to reverse-engineer the plugin! ;)
+
 ## If you like this, you might also like...
 * [Send.zsh](https://github.com/robertzk/send.zsh), a git command by robertzk that combines `git add .`, `git commit -a -m`, and `git push origin <branch>`.
 * [Send.vim](https://github.com/peterhurford/send.vim), a vim plugin by me to do the above _without leaving vim_.
 * [Git-it-on.zsh](https://github.com/peterhurford/git-it-on.zsh), git commands to open files on GitHub from the command line.
-
-## Help, I don't like your alias names!
-Then feel free to reverse-engineer the plugin! ;)
