@@ -17,7 +17,8 @@ Create new omnibus commands by merging things together:
 * `cop <branch>` will checkout <branch>, pull, and then do git status.
 * `fp` (full pull) will `git pull`, `bundle install`, and `bundle exec rake db:migrate`
 * `cofp <branch>` will checkout <branch> and then full pull.
-* `backmerge` will backmerge master by checking out master, full pulling master, checking out your previous branch, and `git merge origin/master` that branch.
+* `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
+* `ruby_backmerge` will do `backmerge`, except with `bundle` and `migrate` included on master.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 

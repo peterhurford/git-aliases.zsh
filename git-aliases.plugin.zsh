@@ -36,6 +36,13 @@ cofp() {
 compdef _git cofp=git-checkout
 backmerge() {
   curr_branch=`git rev-parse --abbrev-ref HEAD`
+  cop master
+  co $curr_branch
+  git merge origin/master -m 'Backmerged master'
+  echo 'Backmerge completed.'
+}
+ruby_backmerge() {
+  curr_branch=`git rev-parse --abbrev-ref HEAD`
   cofp master
   reset
   co $curr_branch
