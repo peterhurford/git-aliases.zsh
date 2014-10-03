@@ -18,6 +18,11 @@ co() {
 }
 compdef _git co=git-checkout
 alias cob='git checkout -b '
+cobm() {
+  git checkout master
+  pull
+  git checkout -b "$1"
+}
 cop() {
   git checkout "$1"
   pull
