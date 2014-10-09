@@ -9,7 +9,7 @@ Shorten various frequently used git aliases:
 * `cob <branch>` does `git checkout -b <branch>` (make a branch)
 * `gf` does `git fetch`
 * `gb` does `git branch` (see your branches)
-* `clone <git username> <repo name>` shortens `git clone` by not requiring the URL (though you can `clone <URL>` if you want to).
+* `clone <git username> <repo name>` shortens `git clone` by not requiring the URL (though you can `clone <URL>` if you want to).  Also, will `cd` into the directory automatically.
 
 Create new omnibus commands by merging things together:
 

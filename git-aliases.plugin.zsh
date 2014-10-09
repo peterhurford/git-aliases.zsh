@@ -64,7 +64,13 @@ prune() {
 }
 clone() {
   if [[ -z $2 ]]; then
+    repo_name=$1
+    while [ "${repo_name%%/*}" != "$repo_name" ]; do
+       repo_name=${repo_name#*/}
+    done
+    repo_name=${repo_name%.*}
     git clone $1
+    cd $repo_name
   else
     git clone git@github.com:$1/$2.git
     cd $2
