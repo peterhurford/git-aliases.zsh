@@ -76,3 +76,21 @@ clone() {
     cd $2
   fi
 }
+
+# Bonus! (Not git related)
+# Tar a command in one file
+tardis() {
+  if [[ -z $1 ]]; then
+    local dir=.
+  else
+    local dir=$1
+  fi
+
+  if [[ -z $2 ]]; then
+    local tarname=$1
+  else
+    local tarname=$2
+  fi
+
+  tar cvf - $dir | gzip > $tarname.tar.gz
+}
