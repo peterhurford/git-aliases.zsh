@@ -14,7 +14,7 @@ alias gb='git branch'
 alias reset='git reset --hard'
 co() {
   git checkout "$1"
-  git status
+  if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git co=git-checkout
 alias cob='git checkout -b '
@@ -26,7 +26,7 @@ cobm() {
 cop() {
   git checkout "$1"
   pull
-  git status
+  if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git cop=git-checkout
 fp() {

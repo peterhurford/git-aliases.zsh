@@ -48,6 +48,12 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 ~/.bash_profile
 ```
 
+
+## Customization
+
+* If you don't want to run `git status` with every branch change, put `GIT_ALIASES_SILENCE_GIT_STATUS=1` into your `.zshrc` (or `.bash_profile`).
+
+
 ## Why use this instead of the "git" plugin?
 [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
 
