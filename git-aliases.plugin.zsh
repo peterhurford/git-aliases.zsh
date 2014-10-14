@@ -17,7 +17,14 @@ co() {
   if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git co=git-checkout
-alias cob='git checkout -b '
+cob() {
+  git checkout -b "$1"
+  if [ "$GIT_ALIASES_AUTOPUSH_NEW_BRANCH" -eq 1 ]; then
+    git add "$(git rev-parse --show-toplevel)"
+    git commit -a -m "Started $1"
+    push
+  fi
+}
 cobm() {
   git checkout master
   pull
