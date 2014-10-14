@@ -61,7 +61,7 @@ PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
 ## Why use this instead of the "git" plugin?
 [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
 
-I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working with Ruby easier (with built in `bundle` and `migrate`), but if you don't work with Ruby and don't like some of the style choices I made (such as `git status` upon checkout), you might prefer that plugin instead.
+I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working on things much easier (especially Ru projects with built in `bundle` and `migrate`), and stuff like autopush on new branch is really neeat.  But if you don't work with Ruby and don't like some of the style choices I made (though feel free to suggest options for futher customizations, see above), you might prefer that plugin instead.
 
 
 ## Why can't I use them both?
