@@ -33,11 +33,13 @@ cobm() {
 cop() {
   git checkout "$1"
   pull
+  git fetch
   if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git cop=git-checkout
 fp() {
   pull
+  git fetch
   bundle install
   bundle exec rake db:migrate
 }
