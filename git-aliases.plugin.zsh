@@ -42,6 +42,7 @@ fp() {
   git fetch
   bundle install
   bundle exec rake db:migrate
+  bundle exec rake db:test:prepare
 }
 cofp() {
   co "$1"
