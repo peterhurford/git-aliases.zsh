@@ -28,6 +28,8 @@ No changes are made to anything involving `git checkout`, `git push`, or `git pu
 
 ## Installation
 
+### Oh-My-Zsh
+
 Assuming you have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), you can
 simply write:
 
@@ -40,6 +42,10 @@ echo "plugins+=(git-aliases)" >> ~/.zshrc
 
 (Once you have this plugin, you can clone this plugin via `clone peterhurford git-aliases.zsh` instead.  Much better!)
 
+### Antigen
+If you're using the [Antigen](https://github.com/zsh-users/antigen) framework for ZSH, all you have to do is add `antigen bundle peterhurford/git-aliases.zsh` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
+
+### Bash
 If you use the non-recommended alternative, bash, you can install this directly to you
 r `~/.bash_profile`:
 
