@@ -16,10 +16,10 @@ Create new omnibus commands by merging things together:
 * Whenever you checkout a branch, git status is run automatically.
 * `cop <branch>` will checkout <branch>, pull, and then do git status.
 * `cobm <branch>` will make a new branch called <branch>, but will checkout master and pull first (so you branch off of master)
-* `fp` (full pull) will `git pull`, `bundle install`, and `bundle exec rake db:migrate`
+* `fp` (full pull) will `git pull`, `bundle install`, `bundle exec rake db:migrate`, and `bundle exec rake db:test:prepare`.
 * `cofp <branch>` will checkout <branch> and then full pull.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
-* `ruby_backmerge` will do `backmerge`, except with `bundle` and `migrate` included on master.
+* `ruby_backmerge` will do `backmerge`, except with `bundle`, `migrate`, and `test:prepare` included on master.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
@@ -59,9 +59,7 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 
 * If you don't want to run `git status` with every branch change, put `GIT_ALIASES_SILENCE_GIT_STATUS=1` into your `.zshrc` (or `.bash_profile`).
 
-* If you want to automatically push a new branch upon branch creation (e.g., commit "S
-tarted <branchname>" with the creation of branch <branchname>), put `GIT_APLIASES_AUTO
-PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
+* If you want to automatically push a new branch upon branch creation (e.g., commit "Started <branchname>" with the creation of branch <branchname>), put `GIT_APLIASES_AUTO_PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
 
 
 ## Why use this instead of the "git" plugin?
