@@ -75,11 +75,13 @@ But in seriousness, I think if you use them both (include both in your plugin li
 
 
 ## Help! Tab completion isn't working for branch names like you said!
-To fix this bug, if you have either `autoload -U compinit && compinit` or `setopt completealiases` in your `.zshrc`, remove them.
+First, I think this only works in Zshell, so if you're not using Zshell, then that's your first problem.
 
-If that doesn't work, you may have to include `unsetopt completealiases`, because it is being set somewhere else.  Though doing this may break the functionality of a different plugin.
+If you are using Zshell and things aren't working, you have to mess with your settings.  If you have either `autoload -U compinit && compinit` or `setopt completealiases` in your `.zshrc`, remove them.
 
-If the problem still persists, it's a problem I haven't encountered myself yet.  Good luck.
+If that doesn't work, you may have to include `unsetopt completealiases` in your `.zshrc` because it is being set somewhere else.  Though doing this may break the functionality of a different plugin, so watch out and choose wisely!
+
+If the problem still persists, it's a problem I haven't encountered myself yet.  File an issue and I can take a look!
 
 
 ## If you like this, you might also like...
