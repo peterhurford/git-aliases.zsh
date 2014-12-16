@@ -54,7 +54,7 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 * If you don't want to run `git status` with every branch change, put `GIT_ALIASES_SILENCE_GIT_STATUS=1` into your `.zshrc` (or `.bash_profile`).
 
 * If you want to automatically push a new branch upon branch creation (e.g., commit "S
-tarted <branchname>" with the creation of branch <branchname>), put `GIT_APLIASES_AUTO
+tarted <branchname>" with the creation of branch <branchname>), put `GIT_ALIASES_AUTO
 PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
 
 
