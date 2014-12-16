@@ -16,8 +16,8 @@ Create new omnibus commands by merging things together:
 * Whenever you checkout a branch, git status is run automatically.
 * `cop <branch>` will checkout <branch>, pull, and then do git status.
 * `cobm <branch>` will make a new branch called <branch>, but will checkout master and pull first (so you branch off of master)
-* `fp` (full pull) will `git pull`, `bundle install`, and `bundle exec rake db:migrate`
-* `cofp <branch>` will checkout <branch> and then full pull.
+* `rp` (ruby pull) will `git pull`, but then do the Ruby-specific `bundle install`, `bundle exec rake db:migrate`, and `bundle exec rake db:test:prepare`
+* `corp <branch>` will checkout <branch> (co) and then ruby pull (rp).  co + rp = corp.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
 * `ruby_backmerge` will do `backmerge`, except with `bundle` and `migrate` included on master.
 * `dif` shows you the output of both `git diff` and `git status`.

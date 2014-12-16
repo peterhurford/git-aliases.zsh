@@ -37,18 +37,18 @@ cop() {
   if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git cop=git-checkout
-fp() {
+rp() {
   pull
   git fetch
   bundle install
   bundle exec rake db:migrate
   bundle exec rake db:test:prepare
 }
-cofp() {
+corp() {
   co "$1"
-  fp
+  rp
 }
-compdef _git cofp=git-checkout
+compdef _git corp=git-checkout
 backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
   cop master
@@ -59,7 +59,7 @@ backmerge() {
 }
 ruby_backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
-  cofp master
+  corp master
   reset
   co $curr_branch
   git merge origin/master -m 'Backmerged master'
