@@ -59,9 +59,9 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 
 * If you don't want to run `git status` with every branch change, put `GIT_ALIASES_SILENCE_GIT_STATUS=1` into your `.zshrc` (or `.bash_profile`).
 
-* If you want to automatically push a new branch upon branch creation (e.g., commit "Started <branchname>" with the creation of branch <branchname>), put `GIT_ALIASES_AUTO PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
+* If you want to automatically push a new branch upon branch creation (e.g., commit "Started <branchname>" with the creation of branch <branchname>), use `GIT_ALIASES_AUTO PUSH_NEW_BRANCH=1`.
 
-* If you want to use [icdiff](https://github.com/jeffkaufman/icdiff) instead of `diff`, put `GIT_ALIASES_ICDIFF=1 into your `.zshrc` (or `.bash_profile`).
+* If you want to use [icdiff](https://github.com/jeffkaufman/icdiff) instead of `diff`, use `GIT_ALIASES_ICDIFF=1`.
 
 
 ## Why use this instead of the "git" plugin?
