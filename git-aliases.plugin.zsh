@@ -67,7 +67,7 @@ ruby_backmerge() {
   echo 'Backmerge completed.  You may have to restart your local server.'
 }
 dif() {
-  git diff
+  if [ "$GIT_ALIASES_ICDIFF" -eq 1 ]; then; git icdiff; else; git diff; fi
   git status
 }
 prune() {
