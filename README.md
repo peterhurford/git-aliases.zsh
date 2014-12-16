@@ -57,6 +57,8 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 tarted <branchname>" with the creation of branch <branchname>), put `GIT_ALIASES_AUTO
 PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
 
+* If you want to use [icdiff](https://github.com/jeffkaufman/icdiff) instead of `diff`, put `GIT_ALIASES_ICDIFF=1 into your `.zshrc` (or `.bash_profile`).
+
 
 ## Why use this instead of the "git" plugin?
 [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
