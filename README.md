@@ -19,7 +19,7 @@ Create new omnibus commands by merging things together:
 * `rp` (ruby pull) will `git pull`, but then do the Ruby-specific `bundle install`, `bundle exec rake db:migrate`, and `bundle exec rake db:test:prepare`
 * `corp <branch>` will checkout <branch> (co) and then ruby pull (rp).  co + rp = corp.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
-* `ruby_backmerge` will do `backmerge`, except with `bundle` and `migrate` included on master.
+* `ruby_backmerge` will do `backmerge`, except with `bundle`, `migrate`, and `test:prepare` included on master.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
@@ -27,6 +27,8 @@ No changes are made to anything involving `git checkout`, `git push`, or `git pu
 
 
 ## Installation
+
+### Oh-My-Zsh
 
 Assuming you have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), you can
 simply write:
@@ -40,6 +42,10 @@ echo "plugins+=(git-aliases)" >> ~/.zshrc
 
 (Once you have this plugin, you can clone this plugin via `clone peterhurford git-aliases.zsh` instead.  Much better!)
 
+### Antigen
+If you're using the [Antigen](https://github.com/zsh-users/antigen) framework for ZSH, all you have to do is add `antigen bundle peterhurford/git-aliases.zsh` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
+
+### Bash
 If you use the non-recommended alternative, bash, you can install this directly to you
 r `~/.bash_profile`:
 
@@ -53,9 +59,13 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 
 * If you don't want to run `git status` with every branch change, put `GIT_ALIASES_SILENCE_GIT_STATUS=1` into your `.zshrc` (or `.bash_profile`).
 
+<<<<<<< HEAD
 * If you want to automatically push a new branch upon branch creation (e.g., commit "S
 tarted <branchname>" with the creation of branch <branchname>), put `GIT_ALIASES_AUTO
 PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
+=======
+* If you want to automatically push a new branch upon branch creation (e.g., commit "Started <branchname>" with the creation of branch <branchname>), put `GIT_APLIASES_AUTO_PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
+>>>>>>> 1f671ee2083b4da945529acdce28a3f4279f1339
 
 * If you want to use [icdiff](https://github.com/jeffkaufman/icdiff) instead of `diff`, put `GIT_ALIASES_ICDIFF=1 into your `.zshrc` (or `.bash_profile`).
 
@@ -63,7 +73,7 @@ PUSH_NEW_BRANCH=1` into your `.zshrc` (or `.bash_profile`).
 ## Why use this instead of the "git" plugin?
 [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) already has a [git plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git) you can optionally install that has aliases.
 
-I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working on things much easier (especially Ru projects with built in `bundle` and `migrate`), and stuff like autopush on new branch is really neeat.  But if you don't work with Ruby and don't like some of the style choices I made (though feel free to suggest options for futher customizations, see above), you might prefer that plugin instead.
+I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working on things much easier (especially Ruby projects with built in `bundle` and `migrate`), and stuff like autopush on new branch is really neeat.  But if you don't work with Ruby and don't like some of the style choices I made (though feel free to suggest options for futher customizations, see above), you might prefer that plugin instead.
 
 
 ## Why can't I use them both?
@@ -73,11 +83,13 @@ But in seriousness, I think if you use them both (include both in your plugin li
 
 
 ## Help! Tab completion isn't working for branch names like you said!
-To fix this bug, if you have either `autoload -U compinit && compinit` or `setopt completealiases` in your `.zshrc`, remove them.
+First, I think this only works in Zshell, so if you're not using Zshell, then that's your first problem.
 
-If that doesn't work, you may have to include `unsetopt completealiases`, because it is being set somewhere else.  Though doing this may break the functionality of a different plugin.
+If you are using Zshell and things aren't working, you have to mess with your settings.  If you have either `autoload -U compinit && compinit` or `setopt completealiases` in your `.zshrc`, remove them.
 
-If the problem still persists, it's a problem I haven't encountered myself yet.  Good luck.
+If that doesn't work, you may have to include `unsetopt completealiases` in your `.zshrc` because it is being set somewhere else.  Though doing this may break the functionality of a different plugin, so watch out and choose wisely!
+
+If the problem still persists, it's a problem I haven't encountered myself yet.  File an issue and I can take a look!
 
 
 ## If you like this, you might also like...
