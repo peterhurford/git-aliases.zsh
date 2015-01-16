@@ -66,6 +66,9 @@ ruby_backmerge() {
   push
   echo 'Backmerge completed.  You may have to restart your local server.'
 }
+deploy() {
+  if [ -f 'bin/deploy' ]; then bin/deploy; else; git push heroku master; fi
+}
 dif() {
   if [ "$GIT_ALIASES_ICDIFF" -eq 1 ]; then; git icdiff; else; git diff; fi
   git status
