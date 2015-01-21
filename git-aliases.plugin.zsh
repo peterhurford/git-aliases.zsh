@@ -78,6 +78,16 @@ prune() {
   git push origin --delete "$1"
 }
 clone() {
+  local yes_cd=true
+  while getopts "d:" OPTION
+  do
+    case $OPTION in
+      d)
+        local yes_cd=false
+        shift
+        ;;
+    esac
+  done
   if [[ -z $2 ]]; then
     local repo_name=$1
     while [ "${repo_name%%/*}" != "$repo_name" ]; do
@@ -85,9 +95,9 @@ clone() {
     done
     repo_name=${repo_name%.*}
     git clone $1
-    cd $repo_name
+    if $yes_cd; then; cd $repo_name; fi
   else
     git clone git@github.com:$1/$2.git
-    cd $2
+    if $yes_cd; then; cd $2; fi
   fi
 }
