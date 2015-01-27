@@ -74,7 +74,7 @@ dif() {
   git status
 }
 prune() {
-  git branch -d "$1"
+  git branch -D "$1"
   git push origin --delete "$1"
 }
 clone() {
