@@ -25,7 +25,7 @@ Create new omnibus commands by merging things together:
 
 And a cool `deploy` command that will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
 
-No changes are made to anything involving `git checkout`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/peterhurford/send.vim).
+No changes are made to anything involving `git commit`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/peterhurford/send.vim).
 
 
 ## Installation
