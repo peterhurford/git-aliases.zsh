@@ -69,6 +69,7 @@ ruby_backmerge() {
 deploy() {
   if [ -f 'bin/deploy' ]; then bin/deploy; else; git push heroku master; fi
 }
+alias deproy=deploy
 dif() {
   if [ "$GIT_ALIASES_ICDIFF" -eq 1 ]; then; git icdiff; else; git diff; fi
   git status
