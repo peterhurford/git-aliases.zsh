@@ -20,7 +20,7 @@ Create new omnibus commands by merging things together:
 * `rp` (ruby pull) will `git pull` and `git fetch`, but then run ruby bundle.
 * `corp <branch>` will checkout <branch> (co) and then ruby pull (rp).  co + rp = corp.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
-* `ruby_backmerge` will do `backmerge`, except with `bundle`, `migrate`, and `test:prepare` included on master.
+* `ruby_backmerge` will do `backmerge`, except with `rb` run first.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
