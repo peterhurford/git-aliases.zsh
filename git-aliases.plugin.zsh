@@ -40,9 +40,13 @@ compdef _git cop=git-checkout
 rp() {
   pull
   git fetch
+  rb
+}
+rb() {
   bundle install
   bundle exec rake db:migrate
   bundle exec rake db:test:prepare
+  bundle exec rake db:seed
 }
 corp() {
   co "$1"
