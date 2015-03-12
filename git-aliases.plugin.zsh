@@ -13,6 +13,7 @@ alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
 co() {
+  git fetch
   git checkout "$1"
   if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
@@ -31,6 +32,7 @@ cobm() {
   git checkout -b "$1"
 }
 cop() {
+  git fetch
   git checkout "$1"
   pull
   git fetch
