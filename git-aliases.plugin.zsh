@@ -31,6 +31,10 @@ cobm() {
   pull
   git checkout -b "$1"
 }
+corbm() {
+  corp master
+  git checkout -b "$1"
+}
 cop() {
   git fetch
   git checkout "$1"

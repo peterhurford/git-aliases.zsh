@@ -19,6 +19,7 @@ Create new omnibus commands by merging things together:
 * `rb` (ruby bundle) will run `bundle install`, `bundle exec rake db:migrate`, `bundle exec rake db:test:prepare`, and `bundle exec rake db:seed`
 * `rp` (ruby pull) will `git pull` and `git fetch`, but then run ruby bundle.
 * `corp <branch>` will checkout <branch> (co) and then ruby pull (rp).  co + rp = corp.
+* `corbm <branch>` is like `cobm`, but with a ruby pull on master instead of a regular pull.  Useful for making new branches in ruby projects.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
 * `ruby_backmerge` will do `backmerge`, except with `rb` run first.
 * `dif` shows you the output of both `git diff` and `git status`.
