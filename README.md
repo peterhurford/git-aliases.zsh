@@ -22,6 +22,7 @@ Create new omnibus commands by merging things together:
 * `corbm <branch>` is like `cobm`, but with a ruby pull on master instead of a regular pull.  Useful for making new branches in ruby projects.
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
 * `ruby_backmerge` will do `backmerge`, except with `rb` run first.
+* `backmerge_all` will iterate over all the git branches in your repo and backmerge master into them.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 
