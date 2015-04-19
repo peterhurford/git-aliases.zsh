@@ -90,6 +90,7 @@ ruby_backmerge() {
 }
 
 backmerge_all() {
+  git fetch
   for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     backmerge ${branch/refs\/heads\//}
   done 
