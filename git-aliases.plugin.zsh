@@ -135,7 +135,11 @@ clone() {
     git clone $1
     if $yes_cd; then; cd $repo_name; fi
   else
-    git clone git@github.com:$1/$2.git
+    if [[ $# -eq 3 ]]; then
+      git clone git@github.com:$1/$2.git $3
+    else
+      git clone git@github.com:$1/$2.git
+    fi
     if $yes_cd; then; cd $2; fi
   fi
 }
