@@ -104,7 +104,9 @@ alias deproy=deploy
 
 
 dif() {
-  if [ "$GIT_ALIASES_ICDIFF" -eq 1 ]; then; git icdiff; else; git diff; fi
+  if [ "$GIT_ALIASES_ICDIFF" -eq 1 ]; then; git icdiff
+  else if [ "$GIT_ALIASES_ICDIFF" -eq 2 ]; then; git difftool --extcmd icdiff
+  else; git diff; fi
   git status
 }
 
