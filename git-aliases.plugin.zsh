@@ -12,6 +12,7 @@ alias s='git status'
 alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
+alias gpom='git push origin master'
 
 co() {
   git fetch
@@ -93,7 +94,7 @@ backmerge_all() {
   git fetch
   for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     backmerge ${branch/refs\/heads\//}
-  done 
+  done
 }
 
 
