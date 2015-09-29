@@ -25,6 +25,9 @@ Create new omnibus commands by merging things together:
 * `backmerge_all` will iterate over all the git branches in your repo and backmerge master into them.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
+* `oldbranches` lists the 10 oldest branches.  Use `oldbranches x` to list the x oldest branches (e.g., `oldbranches 20` for the latest 20).
+* `unmerged` tells you what branches are not yet merged.
+* `plog` shows the git log, but prettier.
 
 And a cool `deploy` command that will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
 
@@ -67,6 +70,8 @@ curl -s https://raw.githubusercontent.com/peterhurford/git-aliases.zsh/master/gi
 * If you want to automatically push a new branch upon branch creation (e.g., commit "Started <branchname>" with the creation of branch <branchname>), use `GIT_ALIASES_AUTO PUSH_NEW_BRANCH=1`.
 
 * If you want to use [icdiff](https://github.com/jeffkaufman/icdiff) instead of `diff`, use `GIT_ALIASES_ICDIFF=1`.
+
+* If you want to use the shorter, prettier version of `git status`, set `GIT_ALIASES_SHORTER_GIT_STATUS=1`.
 
 
 ## Why use this instead of the "git" plugin?

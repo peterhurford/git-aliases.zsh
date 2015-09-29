@@ -8,10 +8,17 @@ pull_or_push() {
 pull() { pull_or_push "pull" $@ }
 push() { pull_or_push "push" $@ }
 
-alias s='git status'
 alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
+alias unmerged="git branch --no-merged"
+alias plog="git log --oneline --decorate"
+
+status() {
+  if [ "$GIT_ALIASES_SHORTER_GIT_STATUS" -ne 1 ]; then; git status
+  else; git status -sb; fi
+}
+alias s='status'
 
 co() {
   git fetch
@@ -139,4 +146,12 @@ clone() {
       if $yes_cd; then; cd $2; fi
     fi
   fi
+}
+
+
+oldbranches() {
+  if [[ $# -eq 0 ]]; then; local hed=10; else; local hed=$1; fi
+  echo $hed
+  echo $#
+  git for-each-ref --sort=committerdate --format='No updates to %(refname:short) since %(committerdate:short)...' | head -n $hed
 }
