@@ -25,6 +25,9 @@ Create new omnibus commands by merging things together:
 * `backmerge_all` will iterate over all the git branches in your repo and backmerge master into them.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
+* `oldbranches` lists the 10 oldest branches.  Use `oldbranches x` to list the x oldest branches (e.g., `oldbranches 20` for the latest 20).
+* `unmerged` tells you what branches are not yet merged.
+* `log` shows the git log, but prettier.
 
 And a cool `deploy` command that will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
 
