@@ -49,10 +49,7 @@ rp() {
   rb
 }
 rb() {
-  bundle install
-  bundle exec rake db:migrate
-  bundle exec rake db:test:prepare
-  bundle exec rake db:seed
+  bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && bundle exec rake db:seed
 }
 corp() {
   co "$1"
@@ -61,19 +58,12 @@ corp() {
 compdef _git corp=git-checkout
 backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
-  cop master
-  co $curr_branch
-  git merge origin/master -m 'Backmerged master'
-  push
+  cop master && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
   echo 'Backmerge completed.'
 }
 ruby_backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
-  corp master
-  reset
-  co $curr_branch
-  git merge origin/master -m 'Backmerged master'
-  push
+  corp master && reset && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
   echo 'Backmerge completed.  You may have to restart your local server.'
 }
 deploy() {
@@ -85,8 +75,7 @@ dif() {
   git status
 }
 prune() {
-  git branch -D "$1"
-  git push origin --delete "$1"
+  git branch -D "$1" && git push origin --delete "$1"
 }
 clone() {
   local yes_cd=true
