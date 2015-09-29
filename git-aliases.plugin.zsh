@@ -135,3 +135,14 @@ clone() {
     fi
   fi
 }
+
+
+alias unmerged="git branch --no-merged"
+
+
+oldbranches() {
+  if [[ $# -eq 0 ]]; then; local hed=10; else; local hed=$1; fi
+  echo $hed
+  echo $#
+  git for-each-ref --sort=committerdate --format='No updates to %(refname:short) since %(committerdate:short)...' | head -n $hed
+}
