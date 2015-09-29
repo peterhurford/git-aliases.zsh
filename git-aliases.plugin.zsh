@@ -8,12 +8,17 @@ pull_or_push() {
 pull() { pull_or_push "pull" $@ }
 push() { pull_or_push "push" $@ }
 
-alias s='git status'
 alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
 alias unmerged="git branch --no-merged"
-alias log="git log --oneline --decorate"
+alias plog="git log --oneline --decorate"
+
+status() {
+  if [ "$GIT_ALIASES_SHORTER_GIT_STATUS" -ne 1 ]; then; git status
+  else; git status -sb; fi
+}
+alias s='status'
 
 co() {
   git fetch
