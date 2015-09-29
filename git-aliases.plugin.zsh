@@ -92,7 +92,8 @@ ruby_backmerge() {
 backmerge_all() {
   git fetch
   for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
-    co ${branch/refs\/heads\//} && backmerge
+    cop master
+    co ${branch/refs\/heads\//} && git merge origin/master -m 'Backmerged master'
   done 
 }
 
