@@ -86,7 +86,7 @@ backmerge_all() {
     local branch=${branch/refs\/heads\//}
     echo "!!! Backmerging $branch ..."
     cop master
-    co $branch && git merge origin/master -m 'Backmerged master'
+    co $branch && git merge origin/master -m 'Backmerged master' && push
   done 
   co curr_branch
 }
