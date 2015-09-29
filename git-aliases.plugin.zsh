@@ -12,6 +12,8 @@ alias s='git status'
 alias gf='git fetch'
 alias gb='git branch'
 alias reset='git reset --hard'
+alias unmerged="git branch --no-merged"
+alias log="git log --oneline --decorate"
 
 co() {
   git fetch
@@ -140,9 +142,6 @@ clone() {
     fi
   fi
 }
-
-
-alias unmerged="git branch --no-merged"
 
 
 oldbranches() {
