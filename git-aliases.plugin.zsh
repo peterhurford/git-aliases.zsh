@@ -99,6 +99,13 @@ backmerge_all() {
 }
 
 
+release() {
+  if [ $# -eq 0 ]; then echo "You must pass a tag to release.";
+  else cop master && git tag $1 && git push origin $1;
+  fi
+}
+
+
 deploy() {
   if [ -f 'bin/deploy' ]; then bin/deploy; else; git push heroku master; fi
 }
