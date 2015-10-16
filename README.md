@@ -28,8 +28,8 @@ Create new omnibus commands by merging things together:
 * `oldbranches` lists the 10 oldest branches.  Use `oldbranches x` to list the x oldest branches (e.g., `oldbranches 20` for the latest 20).
 * `unmerged` tells you what branches are not yet merged.
 * `plog` shows the git log, but prettier.
-
-And a cool `deploy` command that will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
+* `deploy` will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
+* `release <tag>` will automatically release (`git tag` + `git push`) with that tag.
 
 No changes are made to anything involving `git commit`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/peterhurford/send.vim).
 
