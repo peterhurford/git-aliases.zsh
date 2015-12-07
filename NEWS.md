@@ -1,3 +1,7 @@
+## Version 1.1.2
+
+* Protect more git actions with `&&` piping.
+
 ## Version 1.1.1
 
 * Pull current branch before backmerging.
