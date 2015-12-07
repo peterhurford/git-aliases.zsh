@@ -30,37 +30,27 @@ compdef _git co=git-checkout
 cob() {
   git checkout -b "$1"
   if [ "$GIT_ALIASES_AUTOPUSH_NEW_BRANCH" -eq 1 ]; then
-    git add "$(git rev-parse --show-toplevel)"
-    git commit -a -m "Started $1"
-    push
+    git add "$(git rev-parse --show-toplevel)" && git commit -a -m "Started $1" && push
   fi
 }
 
 cobm() {
-  git checkout master
-  pull
-  git checkout -b "$1"
+  git checkout master && pull && git checkout -b "$1"
 }
 
 corbm() {
-  corp master
-  git checkout -b "$1"
+  corp master && git checkout -b "$1"
 }
 
 cop() {
-  git fetch
-  git checkout "$1"
-  pull
-  git fetch
+  git fetch && git checkout "$1" && pull && git fetch
   if [ "$GIT_ALIASES_SILENCE_GIT_STATUS" -ne 1 ]; then; git status; fi
 }
 compdef _git cop=git-checkout
 
 
 rp() {
-  pull
-  git fetch
-  rb
+  pull && git fetch && rb
 }
 
 rb() {
@@ -68,8 +58,7 @@ rb() {
 }
 
 corp() {
-  co "$1"
-  rp
+  co "$1" && rp
 }
 compdef _git corp=git-checkout
 
