@@ -1,4 +1,4 @@
-## Git Aliases
+## Git Aliases <a href="https://github.com/peterhurford/git-aliases.zsh/tags"><img src="https://img.shields.io/github/tag/peterhurford/git-aliases.zsh.svg"></a>
 
 Shorten various frequently used git aliases:
 
