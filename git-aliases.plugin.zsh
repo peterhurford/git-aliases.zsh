@@ -14,6 +14,10 @@ alias reset='git reset --hard'
 alias unmerged="git branch --no-merged"
 alias plog="git log --oneline --decorate"
 
+flog() {
+  git log -p $1
+}
+
 status() {
   if [ "$GIT_ALIASES_SHORTER_GIT_STATUS" -ne 1 ]; then; git status
   else; git status -sb; fi
@@ -38,8 +42,16 @@ cobm() {
   git checkout master && pull && git checkout -b "$1"
 }
 
+cobd() {
+  git checkout dev && pull && git checkout -b "$1"
+}
+
 corbm() {
   corp master && git checkout -b "$1"
+}
+
+corbd() {
+  corp dev && git checkout -b "$1"
 }
 
 cop() {
