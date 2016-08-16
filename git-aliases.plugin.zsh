@@ -75,15 +75,23 @@ corp() {
 compdef _git corp=git-checkout
 
 
-backmerge() {
+backmerge_branch() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
-  pull && cop master && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
+  pull && cop $1 && co $curr_branch && git merge $1 -m 'Backmerged master' && push
   echo 'Backmerge completed.'
+}
+
+backmerge() {
+  backmerge_branch 'master'
+}
+
+backmerge_dev() {
+  backmerge_branch 'dev'
 }
 
 ruby_backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
-  corp master && reset && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
+  pull && corp master && reset && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
   echo 'Backmerge completed.  You may have to restart your local server.'
 }
 
