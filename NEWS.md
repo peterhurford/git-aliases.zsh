@@ -1,3 +1,7 @@
+## Version 1.1.4
+
+* Added `backmerge_dev` to backmerge from `dev` branch.
+
 ## Version 1.1.3
 
 * Added `cobd` and `corbd` to branch through `dev` branch (instead of `master`) for workflows where `dev` branch is the main development branch.
