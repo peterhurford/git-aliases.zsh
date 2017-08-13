@@ -1,20 +1,23 @@
+## Version 1.1.5
+
+* Amends `reset` to either `git reset --hard` if there are no arguments or reset a particular file with `git reset <FILE>` (via executing `git checkout <current branch> <filename>`).
+
 ## Version 1.1.4
 
-* Added `backmerge_dev` to backmerge from `dev` branch.
+* Adds `backmerge_dev` as an alias for backmerging from `dev` branch.
 
 ## Version 1.1.3
 
-* Added `cobd` and `corbd` to branch through `dev` branch (instead of `master`) for workflows where `dev` branch is the main development branch.
+* Amends `cobd` and `corbd` to branch through `dev` branch (instead of `master`) for workflows where `dev` branch is the main development branch.
 
-## Version 1.1.2
+#### Version 1.1.2
 
-* Protect more git actions with `&&` piping.
+* Amends most git actions to contain `&&` piping for safer operations.
 
-## Version 1.1.1
+#### Version 1.1.1
 
-* Pull current branch before backmerging.
+* Amends backmerging to pull the current branch first, before backmerging.
 
 ## Version 1.1
 
-* Added `release` to automatically tag and release a repository.
-* Started versioning.
+* Adds `release` to automatically tag and release a repository.

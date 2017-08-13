@@ -10,9 +10,17 @@ push() { pull_or_push "push" $@ }
 
 alias gf='git fetch'
 alias gb='git branch'
-alias reset='git reset --hard'
 alias unmerged="git branch --no-merged"
 alias plog="git log --oneline --decorate"
+
+reset() {
+  if [ $# -eq 0 ]; then
+    git reset --hard
+  else
+    local curr_branch=`git rev-parse --abbrev-ref HEAD`
+    git checkout $curr_branch $1
+  fi
+}
 
 flog() {
   git log -p $1

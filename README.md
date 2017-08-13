@@ -4,7 +4,7 @@ Shorten various frequently used git aliases:
 
 * `s` does `git status`
 * `reset` does `git reset --hard`
-* `reset <commit>` does `git reset --hard <commit>`
+* `reset <file>` does `git checkout <current branch> <file>`
 * `co <branch>` does `git checkout <branch>`.  You can tab autocomplete these branches.
 * `cob <branch>` does `git checkout -b <branch>` (make a branch)
 * `gf` does `git fetch`
