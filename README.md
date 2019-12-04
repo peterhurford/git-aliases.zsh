@@ -23,6 +23,7 @@ Create new omnibus commands by merging things together:
 * `backmerge` will backmerge master by checking out master, pulling master, checking out your previous branch, and `git merge origin/master` that branch.
 * `ruby_backmerge` will do `backmerge`, except with `rb` run first.
 * `backmerge_all` will iterate over all the git branches in your repo and backmerge master into them.
+* `rebase` starts a `git rebase` of master into the current branch. Continue interactively and make changes. `continue_rebase` will iterate to the next commit. `end_rebase` when all commits are complete to force push changes into the current branch.
 * `dif` shows you the output of both `git diff` and `git status`.
 * `prune <branch>` will delete that branch both locally and on git.
 * `oldbranches` lists the 10 oldest branches.  Use `oldbranches x` to list the x oldest branches (e.g., `oldbranches 20` for the latest 20).
