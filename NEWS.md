@@ -1,3 +1,7 @@
+## Version 1.2
+
+* Adds `rebase` to start an interactive `git rebase` of master into the current branch, `continue_rebase` to continue the rebase, and `end_rebase` to end a rebase.
+
 ## Version 1.1.5
 
 * Amends `reset` to either `git reset --hard` if there are no arguments or reset a particular file with `git reset <FILE>` (via executing `git checkout <current branch> <filename>`).

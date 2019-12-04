@@ -100,7 +100,7 @@ backmerge_dev() {
 ruby_backmerge() {
   local curr_branch=`git rev-parse --abbrev-ref HEAD`
   pull && corp master && reset && co $curr_branch && git merge origin/master -m 'Backmerged master' && push
-  echo 'Backmerge completed.  You may have to restart your local server.'
+  echo 'Backmerge completed. You may have to restart your local server.'
 }
 
 backmerge_all() {
@@ -113,6 +113,22 @@ backmerge_all() {
     co $branch && git merge origin/master -m 'Backmerged master' && push
   done 
   co curr_branch
+}
+
+
+rebase() {
+  local curr_branch=`git rev-parse --abbrev-ref HEAD`
+	cop master && cop $curr_branch && git rebase master
+	echo "!!! Rebase master -> $curr_branch started. Continue interactively ..."
+}
+
+continue_rebase() {
+	git add .; git rebase --continue
+}
+
+end_rebase() {
+  local curr_branch=`git rev-parse --abbrev-ref HEAD`
+	git push -f origin $curr_branch
 }
 
 
