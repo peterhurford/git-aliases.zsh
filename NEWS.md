@@ -1,3 +1,7 @@
+## Version 1.3
+
+* Adds `copm` and `com` to quickly checkout master.
+
 ## Version 1.2
 
 * Adds `rebase` to start an interactive `git rebase` of master into the current branch, `continue_rebase` to continue the rebase, and `end_rebase` to end a rebase.

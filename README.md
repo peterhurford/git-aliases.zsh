@@ -6,6 +6,7 @@ Shorten various frequently used git aliases:
 * `reset` does `git reset --hard`
 * `reset <file>` does `git checkout <current branch> <file>`
 * `co <branch>` does `git checkout <branch>`.  You can tab autocomplete these branches.
+* `com` to quickly checkout master.
 * `cob <branch>` does `git checkout -b <branch>` (make a branch)
 * `gf` does `git fetch`
 * `gb` does `git branch` (see your branches)
@@ -14,7 +15,7 @@ Shorten various frequently used git aliases:
 Create new omnibus commands by merging things together:
 
 * Whenever you checkout a branch, git status is run automatically.
-* `cop <branch>` will checkout <branch>, pull, and then do git status.
+* `cop <branch>` will checkout <branch>, pull, and then do git status. (`copm` for `cop master`)
 * `cobm <branch>` will make a new branch called <branch>, but will checkout master and pull first (so you branch off of master)
 * `rb` (ruby bundle) will run `bundle install`, `bundle exec rake db:migrate`, `bundle exec rake db:test:prepare`, and `bundle exec rake db:seed`
 * `rp` (ruby pull) will `git pull` and `git fetch`, but then run ruby bundle.

@@ -68,6 +68,14 @@ cop() {
 }
 compdef _git cop=git-checkout
 
+com() {
+  co master
+}
+
+copm() {
+  cop master
+}
+
 
 rp() {
   pull && git fetch && rb
